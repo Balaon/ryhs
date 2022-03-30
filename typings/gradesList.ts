@@ -1,8 +1,9 @@
 import { Discipline } from './academicDiscipline'
+import { Person } from './persons';
 
 type Mark =  {
-  studentID: number;
-  point: number
+  studentInfo: Person;
+  point: number;
 }
   
 interface Lesson {
@@ -12,12 +13,12 @@ interface Lesson {
 }
 
 interface TableLesson extends Lesson{
-  day: Date; 
-  markList: Mark[] 
+  day: Date;
+  markList: Mark[]
 }
 interface DiaryLesson extends Lesson {
   discipline: Discipline;
-  point: number; 
+  point: number;
 }
 
 // получает пользователь с id ученика
@@ -28,7 +29,7 @@ export interface SchoolDay{ // SchoolDay[] => дневник
     
 // получает пользователь с учительским id
 export interface GradesList{//GradesList[] (табель успеваемости) => 
-  discipline: Discipline;
+  disciplineInfo: Pick<Discipline, "id" | "name">;
   lessons: TableLesson[];
 }
 

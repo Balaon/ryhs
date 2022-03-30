@@ -15,7 +15,7 @@ interface PersonalData{ //персональные данные
   contacts: Contacts;
 }
 
-interface Person{
+export interface Person{
   id: number;
   personalData: PersonalData;
 }

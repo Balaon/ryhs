@@ -1,5 +1,7 @@
+import { Person } from "./persons"
+
 export interface Discipline {
     id: number;
-    name: string; 
-    teacherID: number;
+    name: string;
+    teacher: Person;
 }
