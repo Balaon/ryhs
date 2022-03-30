@@ -1,9 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter } from 'react-router-dom'
+import { Provider } from 'react-redux';
+import { App } from './pages/App'
+import store from './redux';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <h1 className="text-3xl font-bold underline"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, porro ipsa! Tenetur labore repellendus ut alias, dolorum voluptatibus est quaerat magni corrupti minima? </h1>
+     <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 )
